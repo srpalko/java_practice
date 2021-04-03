@@ -56,6 +56,4 @@ public class DayOfWeek
         }
         return day;
     }
-
-
 }

@@ -38,7 +38,6 @@ public class IntersectingPoint
     }
 
 
-
     private static double[] Cramer(double a, double b, double c, double d, double e, double f)
             throws IllegalArgumentException
     {
