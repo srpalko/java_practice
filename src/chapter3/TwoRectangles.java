@@ -1,6 +1,5 @@
 package chapter3;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Scanner;
 
@@ -39,22 +38,36 @@ public class TwoRectangles
         Point2D.Double r2Right = new Point2D.Double(r2x + (r2width / 2), r2y);
         Point2D.Double r2Bottom = new Point2D.Double(r2x, r2y - (r2height / 2));
 
-        if (r2Left.distance(r1Left) > 0 && r2Top.distance(r1Top) > 0
-            && r2Right.distance(r1Right) > 0 && r2Bottom.distance(r1Bottom) > 0)
+        // Find distances from center of r2 to sides of r1 and r2
+        double centerToLeft_r2 = r2Center.distance(r2Left);
+        double centerToLeft_r1 = r2Center.distance(r1Left);
+        double centerToTop_r2 = r2Center.distance(r2Top);
+        double centerToTop_r1 = r2Center.distance(r1Top);
+        double centerToRight_r2 = r2Center.distance(r2Right);
+        double centerToRight_r1 = r1Center.distance(r1Right);
+        double centerToBottom_r2 = r2Center.distance(r2Bottom);
+        double centerToBottom_r1 = r2Center.distance(r1Bottom);
+
+        // Create some Booleans to make it legible!
+        boolean allSidesIn = centerToLeft_r1 > centerToLeft_r2 && centerToTop_r1 > centerToTop_r2
+                && centerToRight_r1 > centerToRight_r2 && centerToBottom_r1 > centerToBottom_r2;
+        boolean someSidesIn = centerToLeft_r1 > centerToLeft_r2 || centerToTop_r1 > centerToTop_r2
+                || centerToRight_r1 > centerToRight_r2 || centerToBottom_r1 > centerToBottom_r2;
+        boolean someSidesNotIn = centerToLeft_r1 < centerToLeft_r2 || centerToTop_r1 < centerToTop_r2
+                || centerToRight_r1 < centerToRight_r2 || centerToBottom_r1 < centerToBottom_r2;
+
+        // Check if all four sides of r2 are inside of r1
+        if (allSidesIn)
         {
             System.out.println("r2 is inside r1");
-        }
-        else
+
+            // Check if r2 is partially overlapping r1
+        } else if (someSidesIn && someSidesNotIn)
         {
-            // TODO: 4/2/2021
+            System.out.println("r2 overlaps r1");
+        } else
+        {
+            System.out.println("r2 does not overlap r1");
         }
-
-
-
-
-
-
-
-
     }
 }
