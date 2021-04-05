@@ -27,7 +27,7 @@ public class TriangleArea
         return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
     }
 
-    private static double sideCalc(double x1, double y1, double x2, double y2)
+    public static double sideCalc(double x1, double y1, double x2, double y2)
     {
         return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
