@@ -22,4 +22,17 @@ public class DecimalToBinary
         binary.reverse();
         System.out.println(binary);
     }
+
+    public static String decToBin(int number)
+    {
+        StringBuilder binary = new StringBuilder();
+
+        while (number > 0)
+        {
+            binary.append(number % 2);
+            number /= 2;
+        }
+        binary.reverse();
+        return binary.toString();
+    }
 }
