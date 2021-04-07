@@ -24,7 +24,7 @@ public class DisplayFirstDaysOfMonth
 
     }
 
-    private static String monthName(int month)
+    public static String monthName(int month)
     {
         String name;
 
