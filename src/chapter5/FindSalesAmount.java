@@ -21,7 +21,7 @@ public class FindSalesAmount
         System.out.printf("The minimum amount of sales to reach $30,000 is $%.2f", sales);
     }
 
-    private static double commissionAmount(double sale)
+    public static double commissionAmount(double sale)
     {
         if (sale <= 5000)
         {
