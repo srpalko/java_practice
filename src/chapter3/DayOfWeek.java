@@ -13,6 +13,13 @@ public class DayOfWeek
         int month = input.nextInt();
         System.out.print("Enter the day of the month: 1-31: ");
         int dayOfMonth = input.nextInt();
+
+        int weekday = dayOfWeek(year, month, dayOfMonth);
+        System.out.println("Day of the week is " + dayOfWeekForFormula(weekday));
+    }
+
+    public static int dayOfWeek(int year, int month, int dayOfMonth)
+    {
         if (month == 1 || month == 2)
         {
             month += 12;
@@ -20,9 +27,8 @@ public class DayOfWeek
         }
         int century = year / 100;
         int yearOfCentury = year % 100;
-        int weekDay = (dayOfMonth + ((26 * (month + 1)) / 10) + yearOfCentury
-                            + (yearOfCentury / 4) + (century / 4) + (5 * century) ) % 7;
-        System.out.println("Day of the week is " + dayOfWeekForFormula(weekDay));
+        return (dayOfMonth + ((26 * (month + 1)) / 10) + yearOfCentury
+                + (yearOfCentury / 4) + (century / 4) + (5 * century) ) % 7;
     }
 
     public static String dayOfWeekForFormula(int dayNumber)
