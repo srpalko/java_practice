@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Rewrite of paper, rock, scissors that keeps track of score
  * and keeps playing until the difference between scores is
- * greater than 2.
+ * greater than 2.0
  */
 public class ScissorRockPaper
 {
