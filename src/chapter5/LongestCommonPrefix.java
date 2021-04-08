@@ -22,9 +22,9 @@ public class LongestCommonPrefix
             sub1 = string1.substring(0, index);
             sub2 = string2.substring(0, index);
             index++;
-        } while (sub1.compareTo(sub2) == 0);
+        } while (sub1.compareTo(sub2) == 0 && (index < string1.length() && index < string2.length()));
 
-        index-=2;
+        index -= 2;
         if (index <= 0)
         {
             System.out.println(string1 + " and " + string2 + " have no common prefix");
