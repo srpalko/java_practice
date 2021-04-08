@@ -33,7 +33,7 @@ public class DisplayPrimes
      * @param number an integer
      * @return true if number is prime, false if it is not
      */
-    private static boolean isPrime(int number)
+    public static boolean isPrime(int number)
     {
         if (number == 1)
         {
