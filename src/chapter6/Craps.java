@@ -4,6 +4,11 @@ public class Craps
 {
     public static void main(String[] args)
     {
+        playCraps();
+    } // end main
+
+    public static boolean playCraps()
+    {
         int roll1 = rollDie();
         int roll2 = rollDie();
         int sum = roll1 + roll2;
@@ -11,9 +16,11 @@ public class Craps
         if (sum == 2 || sum == 3 || sum == 12)
         {
             System.out.println("You lose");
+            return false;
         } else if (sum == 7 || sum == 11)
         {
             System.out.println("You win");
+            return true;
         } else
         {
             System.out.println("The point is " + sum);
@@ -29,13 +36,14 @@ public class Craps
                 if (nextSum == 7)
                 {
                     System.out.println("You lose");
-                    System.exit(0);
+                    return false;
                 }
             } while (nextSum != sum);
             System.out.println("You win");
+            return true;
         }
-    }
 
+    }
 
     public static int rollDie()
     {
@@ -47,4 +55,4 @@ public class Craps
         System.out.println("You rolled " + roll1 + " + " + roll2 + " = " + sum);
     }
 
-}
+} // end class Craps
