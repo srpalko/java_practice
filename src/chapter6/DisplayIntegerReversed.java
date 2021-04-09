@@ -17,11 +17,11 @@ public class DisplayIntegerReversed
      * @param number number to be displayed in reverse
      */
     public static void reverse(int number)
+{
+    while (number > 0)
     {
-        while (number > 0)
-        {
-            System.out.print(number % 10);
-            number /= 10;
-        }
+        System.out.print(number % 10);
+        number /= 10;
     }
+}
 }
