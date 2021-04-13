@@ -13,7 +13,7 @@ public class IteratorsVsGetLinkedList
         LinkedList<Integer> list = new LinkedList<>();
         Random generator = new Random(20);
 
-        for (int i = 0; i < 500000; i++)
+        for (int i = 0; i < 100_000; i++)
         {
             list.add(generator.nextInt());
         }
@@ -28,14 +28,14 @@ public class IteratorsVsGetLinkedList
 
 
         long start2 = System.currentTimeMillis();
-        for (int i = 0; i < list.size(); i++)
+        for (int i = 0, size = list.size(); i < size; i++)
         {
             list.get(i);
         }
         long end2 = System.currentTimeMillis();
-        long time1 = (end1 - start1) / 1000;
-        long time2 = (end2 - start2) / 1000;
-        System.out.println("Iterator time was " + time1);
-        System.out.println("get(index) time was " + time2);
+        long time1 = (end1 - start1);
+        long time2 = (end2 - start2);
+        System.out.println("Iterator time was " + time1 + "ms");
+        System.out.println("get(index) time was " + time2 + "ms");
     }
 }
