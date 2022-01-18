@@ -86,9 +86,10 @@ public class LargestBlock {
 
     /**
      * Checks whether a certain portion of a matrix contains a sub-matrix of 1's.
-     * @param x row to begin checking
-     * @param y column to begin checking
-     * @param size size of square to look for
+     *
+     * @param x      row to begin checking
+     * @param y      column to begin checking
+     * @param size   size of square to look for
      * @param matrix matrix to perform the check in
      * @return true if it's a square, false if not
      */
@@ -105,6 +106,7 @@ public class LargestBlock {
 
     /**
      * Creates a matrix to check values against when determining which subsections of a matrix to look for blocks in.
+     *
      * @param checkMatrix matrix to be initialized
      */
     public static void initializeCheckMatrix(int[][] checkMatrix) {
